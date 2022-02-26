@@ -52,6 +52,7 @@ class ImageNetIterator(Dataset):
 
     def _convert_jpg_to_tensor(self, fname):
         img = Image.open(fname).convert('RGB')
+
         transformer = transforms.Compose([
             transforms.Resize([self.h, self.w]),
             transforms.RandAugment(),

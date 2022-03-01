@@ -33,6 +33,6 @@ class ResMlpClassifier(nn.Module) :
         for enc in self.encoders :
             z = enc(z)
 
-        projected = self.fc(z)
+        projected = self.fc(z.mean(1))
 
         return projected
